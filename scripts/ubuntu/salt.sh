@@ -8,7 +8,7 @@ sudo su - -c 'echo "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest 
 
 sudo apt-get install -yq salt-master salt-minion salt-ssh salt-cloud salt-api
 
-sudo su - -c "echo '127.0.0.1 salt' >> /etc/hosts"
+sudo su - -c "echo 'master: 127.0.0.1' >> /etc/salt/minion.d/master.conf"
 sudo systemctl restart salt-minion
 
 sleep 10
